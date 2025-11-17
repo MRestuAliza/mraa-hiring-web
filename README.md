@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hiring Management Web App
 
-## Getting Started
+## 1. Project Overview
 
-First, run the development server:
+This project is a Hiring Management Web App built for a frontend engineering case study.  
+It supports two user roles:
 
+### Admin (Recruiter)
+- View and manage job postings.
+- Create jobs with configurable application form fields (Required / Optional / Off).
+- Manage candidates through a sortable and filterable table.
+- Protected admin routes with authentication.
+
+### Applicant (Job Seeker)
+- Browse available job listings.
+- View job details.
+- Apply to a job using a **dynamic application form**, generated based on each job’s configuration.
+- Form supports validation, optional fields, and profile photo placeholder.
+
+The project uses Next.js App Router, modern UI components, and optional Firebase integration.  
+Mock data is also available for local testing without a backend setup.
+
+---
+
+## 2. Tech Stack Used
+
+### Frontend
+- **Next.js 16** (App Router)
+- **React 19**
+- **TypeScript**
+- **Tailwind CSS v4**
+- **Radix UI** components
+- **Lucide React** icons
+
+### Backend & Data
+- **Firebase Client SDK** (Auth + Firestore)
+- Optional **mock JSON data** for offline development
+
+### Supporting Libraries
+- `next-auth` — authentication
+- `react-international-phone` — phone number input
+- `nanoid` — id generation
+- `bcryptjs` — password hashing (if credentials auth used)
+
+### Project Structure (Summary)
+- `app/` — main routes (Admin / Applicant)
+- `components/` — reusable UI components
+- `hooks/` — data & UI logic hooks
+- `lib/` — Firebase config, helpers
+- `mock/` — mock data for local development
+- `public/` — static assets
+- `middleware.js` — route protection
+
+---
+
+## 3. How to Run Locally
+
+### Prerequisites
+- Node.js 18+
+- npm / yarn / pnpm
+
+### Install Dependencies
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+npm install
